@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: const Color(0xFFE5E5E5), // neutral background
+        backgroundColor: const Color(0xFFE5E5E5),
         body: Center(
           child: SizedBox(
             width: 375,
