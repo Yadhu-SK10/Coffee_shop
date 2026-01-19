@@ -6,22 +6,14 @@ class IOSStatusBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 44, // 🔹 iOS status bar height
+      height: 44,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            // Time
-            const Text(
-              "9:41",
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
+            const Text("9:41", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
 
-            // Right icons
             Row(
               children: const [
                 Icon(Icons.signal_cellular_alt, size: 16),

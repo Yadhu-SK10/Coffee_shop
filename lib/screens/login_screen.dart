@@ -21,11 +21,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 height: 312, // 🔹 from figma
-                child: Image.asset(
-                  'assets/images/login_header.png',
-                  fit: BoxFit.cover,
-                  alignment: Alignment.center,
-                ),
+                child: Image.asset('assets/images/login_header.png', fit: BoxFit.cover, alignment: Alignment.center),
               ),
               Container(
                 padding: const EdgeInsets.fromLTRB(24, 40, 24, 40),
@@ -35,34 +31,25 @@ class LoginScreen extends StatelessWidget {
                     const Text(
                       "Welcome!",
                       style: TextStyle(
-                        fontSize: 24,            // from figma
+                        fontSize: 24, // from figma
                         fontWeight: FontWeight.w800, // ExtraBold
                         color: Color(0xFF000000),
-                        height: 1.0,             // 100% line height
+                        height: 1.0, // 100% line height
                       ),
                     ),
                     const SizedBox(height: 24),
 
-                    const CustomTextField(
-                      hint: "Email Address",
-                    ),
+                    const CustomTextField(hint: "Email Address"),
 
                     const SizedBox(height: 16),
 
-                    const CustomTextField(
-                      hint: "Password",
-                      isPassword: true,
-                    ),
+                    const CustomTextField(hint: "Password", isPassword: true),
 
                     const SizedBox(height: 12),
 
                     const Text(
                       "Forgot password?",
-                      style: TextStyle(
-                        color: Color(0xFF006FFD),
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: TextStyle(color: Color(0xFF006FFD), fontSize: 12, fontWeight: FontWeight.w600),
                     ),
 
                     const SizedBox(height: 24),
@@ -81,11 +68,7 @@ class LoginScreen extends StatelessWidget {
                       children: [
                         const Text(
                           "Not a member? ",
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xFF9E9E9E),
-                          ),
+                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Color(0xFF9E9E9E)),
                         ),
                         GestureDetector(
                           onTap: () {
@@ -98,33 +81,21 @@ class LoginScreen extends StatelessWidget {
                                 ),
                               ),
                             );
-
                           },
                           child: const Text(
                             "Register now",
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                              color: Color(0xFF006FFD),
-                            ),
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Color(0xFF006FFD)),
                           ),
                         ),
                       ],
                     ),
                     const SizedBox(height: 16),
-                    const Divider(
-                      thickness: 0.5,
-                      color: Color(0xFFD4D6DD),
-                    ),
+                    const Divider(thickness: 0.5, color: Color(0xFFD4D6DD)),
                     const SizedBox(height: 16),
                     const Text(
                       "Or continue with",
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                          color: Color(0xFF71727A),
-                      ),
+                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Color(0xFF71727A)),
                     ),
                     const SizedBox(height: 16),
 
@@ -156,8 +127,6 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-
-
                   ],
                 ),
               ),

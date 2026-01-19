@@ -60,7 +60,6 @@ class SignupScreen extends StatelessWidget {
 
                         const SizedBox(height: 24),
 
-                        // Email label
                         const Text(
                           "Email Address",
                           style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Colors.black),
@@ -149,7 +148,6 @@ class SignupScreen extends StatelessWidget {
                             print("Signup clicked");
                           },
                         ),
-
                       ],
                     ),
                   ),

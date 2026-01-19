@@ -23,8 +23,8 @@ class PrimaryButton extends StatelessWidget {
           12, // bottom
         ),
         decoration: BoxDecoration(
-          color: const Color(0xFF006FFD), // 🔹 figma color
-          borderRadius: BorderRadius.circular(12), // 🔹 figma radius
+          color: const Color(0xFF006FFD),
+          borderRadius: BorderRadius.circular(12),
         ),
         alignment: Alignment.center,
         child: Text(
