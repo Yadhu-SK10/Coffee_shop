@@ -39,7 +39,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
           contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
 
-          // 🔥 Password eye icon (only if password field)
+          //  Password eye icon (only if password field)
           suffixIcon: widget.isPassword
               ? IconButton(
                   icon: Icon(

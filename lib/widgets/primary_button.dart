@@ -15,7 +15,7 @@ class PrimaryButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 48, // 🔹 from figma
+        height: 48,
         padding: const EdgeInsets.fromLTRB(
           16, // left
           12, // top

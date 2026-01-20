@@ -5,6 +5,7 @@ import 'package:coffee_shop/screens/signup_screen.dart';
 import 'package:coffee_shop/widgets/social_icon_button.dart';
 import 'package:provider/provider.dart';
 import 'package:coffee_shop/providers/signup_provider.dart';
+import 'package:coffee_shop/screens/onboarding_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -12,7 +13,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white, // screen background from figma
+      color: Colors.white,
       child: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -20,7 +21,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               SizedBox(
                 width: double.infinity,
-                height: 312, // 🔹 from figma
+                height: 312,
                 child: Image.asset('assets/images/login_header.png', fit: BoxFit.cover, alignment: Alignment.center),
               ),
               Container(
@@ -31,10 +32,10 @@ class LoginScreen extends StatelessWidget {
                     const Text(
                       "Welcome!",
                       style: TextStyle(
-                        fontSize: 24, // from figma
-                        fontWeight: FontWeight.w800, // ExtraBold
+                        fontSize: 24,
+                        fontWeight: FontWeight.w800,
                         color: Color(0xFF000000),
-                        height: 1.0, // 100% line height
+                        height: 1.0,
                       ),
                     ),
                     const SizedBox(height: 24),
@@ -57,7 +58,7 @@ class LoginScreen extends StatelessWidget {
                     PrimaryButton(
                       text: "Login",
                       onTap: () {
-                        print("Login clicked");
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const OnboardingScreen()));
                       },
                     ),
 

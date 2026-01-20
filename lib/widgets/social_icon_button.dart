@@ -13,8 +13,8 @@ class SocialIconButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 44,
-        height: 44,
+        width: 40,
+        height: 40,
         decoration: BoxDecoration(color: backgroundColor, shape: BoxShape.circle),
         alignment: Alignment.center,
          child: SvgPicture.asset(iconPath, fit: BoxFit.contain),

@@ -12,15 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+
       home: Scaffold(
         backgroundColor: const Color(0xFFE5E5E5),
-        body: Center(
-          child: SizedBox(
-            width: 375,
-            height: 812,
-            child: const LoginScreen(),
-          ),
-        ),
+
+        body: Center(child: SizedBox(width: 375, height: 812, child: const LoginScreen())),
       ),
     );
   }

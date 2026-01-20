@@ -4,6 +4,7 @@ import 'package:coffee_shop/widgets/ios_status_bar.dart';
 import 'package:coffee_shop/widgets/custom_text_field.dart';
 import 'package:provider/provider.dart';
 import 'package:coffee_shop/widgets/primary_button.dart';
+import 'package:coffee_shop/screens/onboarding_screen.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -145,7 +146,7 @@ class SignupScreen extends StatelessWidget {
                         PrimaryButton(
                           text: "Sign up",
                           onTap: () {
-                            print("Signup clicked");
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const OnboardingScreen()));
                           },
                         ),
                       ],
