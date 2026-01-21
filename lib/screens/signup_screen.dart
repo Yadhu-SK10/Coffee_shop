@@ -5,6 +5,7 @@ import 'package:coffee_shop/widgets/custom_text_field.dart';
 import 'package:provider/provider.dart';
 import 'package:coffee_shop/widgets/primary_button.dart';
 import 'package:coffee_shop/screens/onboarding_screen.dart';
+import 'package:coffee_shop/widgets/overlay_back_button.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -13,7 +14,9 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFEFEFEF), // desktop background
-      body: Center(
+      body: Stack (
+      children: [
+        Center(
         child: Container(
           width: 375,
           height: 812,
@@ -157,6 +160,9 @@ class SignupScreen extends StatelessWidget {
             ),
           ),
         ),
+        ),
+        const OverlayBackButton(),
+      ],
       ),
     );
   }

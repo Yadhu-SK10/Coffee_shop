@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:coffee_shop/widgets/primary_button.dart';
 import 'package:coffee_shop/screens/subscription_screen.dart';
+import 'package:coffee_shop/widgets/onboarding_dots.dart';
+import 'package:coffee_shop/widgets/overlay_back_button.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -35,7 +37,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFEFEFEF),
-      body: Center(
+      body: Stack(
+      children:[
+        Center(
         child: Container(
           width: 375,
           height: 812,
@@ -43,12 +47,58 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              //  IMAGE
               SizedBox(
                 width: 375,
                 height: 506,
                 child: GestureDetector(
                   onHorizontalDragEnd: _handleSwipe,
-                  child: Image.network(imageUrls[_currentIndex], fit: BoxFit.cover),
+                  child: Image.network(
+                    imageUrls[_currentIndex],
+                    fit: BoxFit.cover,
+
+                    //  LOADING BUILDER
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) return child;
+
+                      return Container(
+                        color: const Color(0xFFF2F2F2),
+                        child: const Center(
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: Color(0xFF006FFD),
+                          ),
+                        ),
+                      );
+                    },
+
+                    // FRAME BUILDER
+                    frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+                      if (wasSynchronouslyLoaded) return child;
+
+                      return AnimatedOpacity(
+                        opacity: frame == null ? 0 : 1,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeOut,
+                        child: child,
+                      );
+                    },
+
+                    //  ERROR BUILDER
+                    errorBuilder: (context, error, stackTrace) {
+                      return Container(
+                        color: const Color(0xFFF2F2F2),
+                        child: const Center(
+                          child: Icon(
+                            Icons.broken_image_outlined,
+                            size: 40,
+                            color: Color(0xFF9E9E9E),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+
                 ),
               ),
 
@@ -57,9 +107,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               //  DOT INDICATOR
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: List.generate(imageUrls.length, (index) => _buildDot(index)),
+                child: OnboardingDots(
+                  currentIndex: _currentIndex,
+                  itemCount: imageUrls.length,
+                  onDotTap: (index) {
+                    setState(() {
+                      _currentIndex = index;
+                    });
+                  },
                 ),
               ),
 
@@ -113,22 +168,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
         ),
       ),
-    );
-  }
+        const OverlayBackButton(),
+    ],
 
-  //  DOT WIDGET
-  Widget _buildDot(int index) {
-    final bool isActive = _currentIndex == index;
-
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 250),
-      margin: const EdgeInsets.only(right: 6),
-      width: isActive ? 10 : 6,
-      height: 6,
-      decoration: BoxDecoration(
-        color: isActive ? const Color(0xFF006FFD) : const Color(0xFFD0D0D0),
-        borderRadius: BorderRadius.circular(3),
-      ),
-    );
+    ), );
   }
 }

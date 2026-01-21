@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:coffee_shop/widgets/progress_bar.dart';
 import 'package:coffee_shop/widgets/interest_tile.dart';
 import 'package:coffee_shop/widgets/primary_button.dart';
+import 'package:coffee_shop/widgets/overlay_back_button.dart';
 
 class SubscriptionScreen extends StatefulWidget {
   const SubscriptionScreen({super.key});
@@ -39,7 +40,8 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFEFEFEF),
-      body: Center(
+      body: Stack(
+      children: [ Center(
         child: Container(
           width: 375,
           height: 812,
@@ -47,7 +49,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 68),
+              const SizedBox(height: 54),
 
               Center(child: ProgressBar(progress: progress)),
 
@@ -114,6 +116,9 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
           ),
         ),
       ),
-    );
+        const OverlayBackButton(),
+      ],
+
+      ), );
   }
 }
