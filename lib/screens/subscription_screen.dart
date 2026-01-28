@@ -4,6 +4,7 @@ import 'package:coffee_shop/widgets/interest_tile.dart';
 import 'package:coffee_shop/widgets/primary_button.dart';
 import 'package:coffee_shop/widgets/overlay_back_button.dart';
 
+
 class SubscriptionScreen extends StatefulWidget {
   const SubscriptionScreen({super.key});
 
@@ -106,7 +107,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                     child: PrimaryButton(
                       text: 'Next',
                       onTap: () {
-                        print('subscription set');
+                        print("subscription set");
                       },
                     ),
                   ),

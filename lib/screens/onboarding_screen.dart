@@ -78,7 +78,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
                       return AnimatedOpacity(
                         opacity: frame == null ? 0 : 1,
-                        duration: const Duration(milliseconds: 300),
+                        duration: const Duration(milliseconds: 2000),
                         curve: Curves.easeOut,
                         child: child,
                       );
